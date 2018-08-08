@@ -3,7 +3,7 @@
 
 ### Requirements
 
-* Python3.6
+* [Python 3.6](https://www.python.org/downloads/release/python-366/) or higher. 
 
 ### Using
 
