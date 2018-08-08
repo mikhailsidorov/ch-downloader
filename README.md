@@ -1,9 +1,14 @@
 # ch-download
+## Courses downloader for coursehunters.net
 
-Course hunters downloader
+### Requirements
 
-## using
+* Python3
 
+### Using
+
+```
 pip install -r requirements.txt
 cd ch_downloader
-scrapy crawl ch -a courseurl=course_url
+scrapy crawl ch -a url=course_url
+```
