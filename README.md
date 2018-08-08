@@ -1,9 +1,9 @@
-# ch-download
+# ch-downloader
 ## Courses downloader for coursehunters.net
 
 ### Requirements
 
-* Python3
+* Python3.6
 
 ### Using
 
