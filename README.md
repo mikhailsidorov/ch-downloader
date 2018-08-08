@@ -1,4 +1,4 @@
-# ch-downloader
+# CH-Downloader
 ## Courses downloader for coursehunters.net
 
 ### Requirements
