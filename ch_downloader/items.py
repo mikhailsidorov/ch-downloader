@@ -21,6 +21,7 @@ class Course(scrapy.Item):
     description = scrapy.Field()
     materials = scrapy.Field()
     duration = scrapy.Field()
+    lessons_info = scrapy.Field()
 
 
 class Lesson(scrapy.Item):

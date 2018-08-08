@@ -68,8 +68,6 @@ USER_AGENT = "Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, lik
 ITEM_PIPELINES = {
     'ch_downloader.pipelines.CleanFileNamesPipeline': 1,
     'ch_downloader.pipelines.CustomNamingFilesPipeline': 10,
-    'ch_downloader.pipelines.CourseInfoStoringPipeline': 300,
-    'ch_downloader.pipelines.LessonLinkStoringPipeline': 400,
 }
 
 FILES_STORE = './downloads'
