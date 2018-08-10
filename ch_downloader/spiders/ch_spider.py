@@ -1,3 +1,4 @@
+import logging
 import os
 
 import scrapy
@@ -9,9 +10,21 @@ from ch_downloader import items, settings
 class CHSpider(scrapy.Spider):
     name = "ch"
 
-    def __init__(self, url=None, *args, **kwargs):
-        super().__init__(url, **kwargs)
+    def __init__(self, url=None, start=None, end=None, *args, **kwargs):
+        super().__init__(*args, **kwargs)
         self.start_urls = [url]
+        try:
+            self.start = int(start) - 1 if start is not None else None
+        except ValueError:
+            self.logger.log(logging.INFO, 'The "start" is not an integer. Ignored')
+            self.start = None
+
+        try:
+            self.end = int(end) if end is not None else None
+        except ValueError:
+            self.logger.log(logging.INFO, 'The "end" is not an integer. Ignored')
+            self.end = None
+
         self.info_path = os.path.join(settings.FILES_STORE, 'info.txt')
         self.links_path = os.path.join(settings.FILES_STORE, 'links.txt')
         self.create_download_dir()
@@ -20,7 +33,7 @@ class CHSpider(scrapy.Spider):
         self.lessons_selector = self.get_lessons_selector(response)
         self.save_links()
         self.save_course_info(response)
-        for selector in self.lessons_selector:
+        for selector in self.lessons_selector[self.start:self.end]:
             yield self.load_lesson(selector)
 
     def save_course_info(self, response):
