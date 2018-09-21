@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Scrapy settings for ch_downloader project
+# Scrapy settings for chd project
 #
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
@@ -9,10 +9,10 @@
 #     https://doc.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://doc.scrapy.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = 'ch_downloader'
+BOT_NAME = 'chd'
 
-SPIDER_MODULES = ['ch_downloader.spiders']
-NEWSPIDER_MODULE = 'ch_downloader.spiders'
+SPIDER_MODULES = ['chd.spiders']
+NEWSPIDER_MODULE = 'chd.spiders'
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
@@ -47,13 +47,13 @@ USER_AGENT = "Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, lik
 # Enable or disable spider middlewares
 # See https://doc.scrapy.org/en/latest/topics/spider-middleware.html
 # SPIDER_MIDDLEWARES = {
-#    'ch_downloader.middlewares.ChDownloaderSpiderMiddleware': 543,
+#    'chd.middlewares.ChDownloaderSpiderMiddleware': 543,
 # }
 
 # Enable or disable downloader middlewares
 # See https://doc.scrapy.org/en/latest/topics/downloader-middleware.html
 # DOWNLOADER_MIDDLEWARES = {
-#    'ch_downloader.middlewares.ChDownloaderDownloaderMiddleware': 543,
+#    'chd.middlewares.ChDownloaderDownloaderMiddleware': 543,
 
 # }
 
@@ -66,11 +66,9 @@ USER_AGENT = "Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, lik
 # Configure item pipelines
 # See https://doc.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-    'ch_downloader.pipelines.CleanFileNamesPipeline': 1,
-    'ch_downloader.pipelines.CustomNamingFilesPipeline': 10,
+    'chd.pipelines.CleanFileNamesPipeline': 1,
+    'chd.pipelines.CustomNamingFilesPipeline': 10,
 }
-
-FILES_STORE = './downloads'
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://doc.scrapy.org/en/latest/topics/autothrottle.html
