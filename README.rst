@@ -2,6 +2,9 @@
 CHD - Courses downloader for coursehunters.net
 ##############################################
 
+.. image:: https://badge.fury.io/py/chd.svg
+    :target: https://badge.fury.io/py/chd
+
 Requirements
 ============
 
